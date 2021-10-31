@@ -1,0 +1,13 @@
+<template>
+  <section>
+    <b-field>
+      <b-radio>Basic</b-radio>
+    </b-field>
+    <b-field>
+      <b-radio>Basic</b-radio>
+    </b-field>
+    <b-field>
+      <b-radio>Basic</b-radio>
+    </b-field>
+  </section>
+</template>

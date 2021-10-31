@@ -1,0 +1,9 @@
+@import '~bulma/sass/utilities/_all';
+
+$primary: #079b9b;
+$primary-invert: findColorInvert($primary);
+
+$colors: ("primary": ($primary, $primary-invert));
+
+@import '~bulma';
+@import '~buefy/src/scss/buefy';

@@ -1,53 +1,27 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <card
-        title="Free"
-        icon="github"
+  <section>
+    <div class="content">
+      <h4>アンケート</h4>
+    </div>
+    <div v-for="questionnaire in questionnaires" :key="questionnaire.id" class="p-3">
+      <b-button
+        type="is-primary is-large"
+        outlined
+        expanded
+        @click="a"
       >
-        Open source on <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
-      </card>
-
-      <card
-        title="Responsive"
-        icon="cellphone-link"
-      >
-        <b class="has-text-grey">
-          Every
-        </b> component is responsive
-      </card>
-
-      <card
-        title="Modern"
-        icon="alert-decagram"
-      >
-        Built with <a href="https://vuejs.org/">
-          Vue.js
-        </a> and <a href="http://bulma.io/">
-          Bulma
-        </a>
-      </card>
-
-      <card
-        title="Lightweight"
-        icon="arrange-bring-to-front"
-      >
-        No other internal dependency
-      </card>
+        <span>{{ questionnaire.title }}</span>
+      </b-button>
     </div>
   </section>
 </template>
 
 <script>
-import Card from '~/components/Card'
-
 export default {
-  name: 'HomePage',
-
-  components: {
-    Card
+  async asyncData ({ $axios }) {
+    return {
+      questionnaires: await $axios.$get('http://localhost:3301/questionnaires')
+    }
   }
 }
 </script>
